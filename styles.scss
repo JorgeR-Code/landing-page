@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin alignFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #ffff;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(51, 224, 199 );
+    @include alignFlex();
+
+    .containerC{
+        width: 90%;
+        height: 95%;
+        background-color: rgb(224, 51, 152);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
