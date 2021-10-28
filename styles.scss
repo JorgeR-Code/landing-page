@@ -9,6 +9,13 @@
     align-items: center;
 }
 
+@mixin gridDistribution($columnI, $columnF, $rowI, $rowF) {
+    grid-column-start: $columnI;
+    grid-column-end: $columnF;
+    grid-row-start: $rowI;
+    grid-row-end: $rowF;
+}
+
 body {
     background-color: #ffff;
 }
@@ -20,21 +27,41 @@ body {
     @include alignFlex();
 
     .containerC{
-        background:{
-            image: url('img/1.jpg');
-            repeat: no-repeat;
-        }
+        background-image: url('img/1.jpg');
         position: absolute;
         width: 90%;
-        height: 95%;
+        height: 90%;
         display: grid;
+        align-content: center;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
 
-
-       
+        .description{
+            @include gridDistribution( 1, 2, 1, 2);
+            
+        
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 20% 80%;
+        
+            .logo{
+                @include gridDistribution( 2, 3, 1, 2);
+        
+                width: 100%;
+                height: 100%;
+            align-items: center;
+                img{
+                    height: 100%;
+                }
+            }
+        
+            .text{
+                @include gridDistribution( 1, 4, 2, 3);
+        
+            }
+        }
     }
 }
-.logo{
-    width: 10%;
-    height: 10%;
-}
+
+
+
