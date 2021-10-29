@@ -22,45 +22,144 @@ body {
 
 .container{
     width: 100vw;
+    
     height: 100vh;
     background-color: rgb(51, 224, 199 );
     @include alignFlex();
+    margin: auto;
 
-    .containerC{
-        background-image: url('img/1.jpg');
-        position: absolute;
-        width: 90%;
-        height: 90%;
-        display: grid;
-        align-content: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
 
-        .description{
-            @include gridDistribution( 1, 2, 1, 2);
-            
-        
+    
+        .containerC{
+            background-image: url('img/1.jpg');
+            position: absolute;
+            width: 90%;
+            height: 80%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 20% 80%;
-        
-            .logo{
-                @include gridDistribution( 2, 3, 1, 2);
-        
-                width: 100%;
-                height: 100%;
-            align-items: center;
-                img{
+            align-content: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100%;
+    
+            .description{
+                @include gridDistribution( 1, 2, 1, 2);
+                background-color: rgba(255, 255, 255, 0.5);
+            
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 20% 80%;
+            
+                .logo{
+                    @include gridDistribution( 2, 3, 1, 2);
+            
+                    width: 100%;
                     height: 100%;
+                align-items: center;
+                    img{
+                        height: 100%;
+                        transform: translateY(-20px);
+                    }
+                }
+            
+                .text{
+                    @include gridDistribution( 1, 4, 2, 3);
+                    @include alignFlex();
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    
+                    h1{
+                        text-align: center;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-size: 2.7vmax;
+                    }
+    
+                    p{
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-size: 1.7vmax;
+                        text-align: center;
+                        line-height : 3vmax;
+                    }
                 }
             }
+    
+            .form{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 100%;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                .form1{
+                    @include alignFlex();
+                    height: 20%;
+                    gap: 5px;
+                    .email{
+                        text-align: center;
+                        align-content: center;
+                        align-items: center;
+                        width: 40%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .email1{
+                            text-align: center;
+                            align-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 30%;
+                            border-radius: 20px;
+                        }
+                    }
         
-            .text{
-                @include gridDistribution( 1, 4, 2, 3);
         
+                    .button{
+                        color:white;
+                        font-size: 1vmax;
+                        background-color: rgb(51, 224, 199 );
+                        width: 20%;
+                        height: 30%;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        
+                        :hover{
+                            background-color: rgb(4, 133, 111);
+    
+                        }
+                    }
+                }
+               
+                .formulario__input-error{
+                    color: white;
+                    font-size: 20px;
+                    margin-bottom: 0;
+                    margin-top: 5px;
+                    display: none;
+    
+                   
+                }
+                .formulario__input-error-activo{
+                    display: block;
+                    
+                   }
+                   .formulario__mensaje{
+                    font-size: 90%;
+                    text-align: center;
+                    height: 45px;
+                    line-height: 45px;
+                    background: #F66060;
+                    padding: 0 15px;
+                    border-radius: 3px;
+                    display: none;
+                  }
+                  .formulario__mensaje-activo{
+                    display: block;
+                  }
+    
             }
-        }
+        
     }
+
 }
 
 

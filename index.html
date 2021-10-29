@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request access</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js"></script>
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="container">
@@ -17,16 +20,31 @@
                     <img src="img/logo.png" alt="">
                 </div>
                 <div class="text">
-                    <h1>Estás a un paso de relajarte</h1>
-                    <p>Ven y conoce alguno de los lugares más hermosos y culturales del país que tenemos para ti!</p>
+                    <h1>Las vacaciones de tus sueños!</h1>
+                    <p>Estás a un paso de relajarte! Ven y conoce alguno de los lugares más hermosos y culturales del país que tenemos para ti!</p>
                 </div>
                 
             </div>
             <div class="form">
-                <form action="#">
-                    <input class="email" type="text"/>
-                    <input type="submit" value="Acceso"/>
+                <form class="form1" action="#" id="formulario">
+                    <div class="email" id="grupo__correo">
+                        <input  class="email1" id="emailI" type="text" name="correo" placeholder="Correo electrónico"/>
+                        <label class="formulario__label" for="emailI"></label>
+                        <div class="formulario__input-error">
+                            <p >Debe ingresar un correo válido</p>
+
+                        </div>
+
+                    </div>
+
+                    <input class="button" type="submit" value="Acceso" id="agregarId" />
+                    
+
                 </form>
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i><b> Error:</b> Por favor rellena el formulario correctamente!</p>
+
+                </div>
             </div>
             <div class="img">
     
@@ -34,5 +52,7 @@
         </div>
            
     </div>
+    <script src="scripts.js"></script>
+
 </body>
 </html>
